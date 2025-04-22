@@ -1,0 +1,88 @@
+<!-- profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile - RetireWise</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f2f2f2, #e6f7ff);
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007acc;
+        }
+
+        .username {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+            text-transform: uppercase;
+            color: #003d66;
+        }
+
+        .quote-box {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #e6f2ff;
+            border-left: 5px solid #007acc;
+            font-style: italic;
+            font-size: 18px;
+        }
+
+        .refresh-note {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Your Profile</h1>
+        <div class="username" id="user-name"></div>
+        <div class="quote-box" id="quote-box">Loading quote...</div>
+        <div class="refresh-note">Refresh the page to get a new quote!</div>
+    </div>
+
+    <script>
+        // Simulating logged-in user (replace this with dynamic backend logic)
+        const userName = "our valued customer";  // replace this value dynamically from backend if needed
+        document.getElementById("user-name").textContent = userName.toUpperCase();
+
+        const quotes = [
+            "Do not save what is left after spending, but spend what is left after saving. – Warren Buffett",
+            "The best investment you can make is in yourself. – Warren Buffett",
+            "An investment in knowledge pays the best interest. – Benjamin Franklin",
+            "Beware of little expenses. A small leak will sink a great ship. – Benjamin Franklin",
+            "It’s not your salary that makes you rich, it’s your spending habits. – Charles A. Jaffe"
+        ];
+
+        function getRandomQuote() {
+            const index = Math.floor(Math.random() * quotes.length);
+            return quotes[index];
+        }
+
+        document.getElementById("quote-box").textContent = getRandomQuote();
+
+        // Optionally change quote every 10 seconds
+        // setInterval(() => {
+        //     document.getElementById("quote-box").textContent = getRandomQuote();
+        // }, 10000);
+    </script>
+</body>
+</html>

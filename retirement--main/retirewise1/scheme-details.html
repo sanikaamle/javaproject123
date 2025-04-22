@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheme Details - RetireWise</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>RetireWise</h1>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="#" id="logoutBtn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="scheme-details">
+                <h2 id="schemeTitle">Scheme Name</h2>
+                <p id="schemeContribution">Monthly Contribution: </p>
+                <p id="schemeReturns">Expected Returns: </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. This plan is suitable for individuals based on risk profile and long-term goals.</p>
+                <a href="dashboard.html" class="back-link">← Back to Dashboard</a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 RetireWise. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const scheme = urlParams.get('scheme');
+
+        const details = {
+            basic: {
+                title: "Basic Retirement Plan",
+                contribution: "$500",
+                returns: "5% annually"
+            },
+            premium: {
+                title: "Premium Retirement Plan",
+                contribution: "$1000",
+                returns: "7% annually"
+            },
+            elite: {
+                title: "Elite Retirement Plan",
+                contribution: "$2000",
+                returns: "9% annually"
+            }
+        };
+
+        if (scheme && details[scheme]) {
+            document.getElementById("schemeTitle").textContent = details[scheme].title;
+            document.getElementById("schemeContribution").textContent = `Monthly Contribution: ${details[scheme].contribution}`;
+            document.getElementById("schemeReturns").textContent = `Expected Returns: ${details[scheme].returns}`;
+        } else {
+            document.querySelector(".scheme-details").innerHTML = "<p>Scheme not found.</p><a href='dashboard.html'>Go Back</a>";
+        }
+    </script>
+</body>
+</html>
