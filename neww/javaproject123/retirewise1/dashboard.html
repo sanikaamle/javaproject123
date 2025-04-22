@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - RetireWise</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>RetireWise</h1>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="#" id="logoutBtn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="dashboard-grid">
+                <section class="retirement-schemes">
+                    <h2>Available Retirement Schemes</h2>
+                    <div class="schemes-list">
+                        <div class="scheme-card">
+                            <h3>Basic Retirement Plan</h3>
+                            <p>Monthly contribution: $500</p>
+                            <p>Expected returns: 5% annually</p>
+                            <button class="view-details">View Details</button>
+                        </div>
+                        <div class="scheme-card">
+                            <h3>Premium Retirement Plan</h3>
+                            <p>Monthly contribution: $1000</p>
+                            <p>Expected returns: 7% annually</p>
+                            <button class="view-details">View Details</button>
+                        </div>
+                        <div class="scheme-card">
+                            <h3>Elite Retirement Plan</h3>
+                            <p>Monthly contribution: $2000</p>
+                            <p>Expected returns: 9% annually</p>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="questionnaire">
+                    <h2>Find Your Perfect Retirement Plan</h2>
+                    <form id="retirementForm">
+                        <div class="form-group">
+                            <label for="currentAge">Current Age</label>
+                            <input type="number" id="currentAge" name="currentAge" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="retirementAge">Desired Retirement Age</label>
+                            <input type="number" id="retirementAge" name="retirementAge" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="monthlyIncome">Current Monthly Income ($)</label>
+                            <input type="number" id="monthlyIncome" name="monthlyIncome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="savings">Current Savings ($)</label>
+                            <input type="number" id="savings" name="savings" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="riskTolerance">Risk Tolerance</label>
+                            <select id="riskTolerance" name="riskTolerance" required>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-button">Get Recommendations</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 RetireWise. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/dashboard.js"></script>
+</body>
+</html> 
