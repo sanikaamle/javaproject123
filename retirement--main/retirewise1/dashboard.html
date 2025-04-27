@@ -28,19 +28,19 @@
                     <div class="schemes-list">
                         <div class="scheme-card">
                             <h3>Basic Retirement Plan</h3>
-                            <p>Monthly contribution: $500</p>
+                            <p>Monthly contribution: 599</p>
                             <p>Expected returns: 5% annually</p>
                             <button class="view-details" onclick="location.href='scheme-details.html?scheme=basic'">View Details</button>
                         </div>
                         <div class="scheme-card">
                             <h3>Premium Retirement Plan</h3>
-                            <p>Monthly contribution: $1000</p>
+                            <p>Monthly contribution: 1099</p>
                             <p>Expected returns: 7% annually</p>
                             <button class="view-details" onclick="location.href='scheme-details.html?scheme=premium'">View Details</button>
                         </div>
                         <div class="scheme-card">
                             <h3>Elite Retirement Plan</h3>
-                            <p>Monthly contribution: $2000</p>
+                            <p>Monthly contribution: 2000</p>
                             <p>Expected returns: 9% annually</p>
                             <button class="view-details" onclick="location.href='scheme-details.html?scheme=elite'">View Details</button>
                         </div>
@@ -59,11 +59,11 @@
                             <input type="number" id="retirementAge" name="retirementAge" required>
                         </div>
                         <div class="form-group">
-                            <label for="monthlyIncome">Current Monthly Income ($)</label>
+                            <label for="monthlyIncome">Current Monthly Income</label>
                             <input type="number" id="monthlyIncome" name="monthlyIncome" required>
                         </div>
                         <div class="form-group">
-                            <label for="savings">Current Savings ($)</label>
+                            <label for="savings">Current Savings</label>
                             <input type="number" id="savings" name="savings" required>
                         </div>
                         <div class="form-group">
@@ -104,16 +104,15 @@
     
                 let recommendedScheme = "";
     
-                // Logic based on financials + risk
-                if (monthlyIncome < 30000 || savings < 100000) {
+                if (monthlyIncome < 30000 || savings < 10000) {
                     recommendedScheme = "basic";
-                } else if ((monthlyIncome >= 30000 && monthlyIncome <= 70000) || (savings >= 100000 && savings <= 300000)) {
+                } else if ((monthlyIncome >= 30000 && monthlyIncome <= 70000) || (savings >= 10000 && savings <= 30000)) {
                     if (riskTolerance === "low") {
                         recommendedScheme = "basic";
                     } else {
                         recommendedScheme = "premium";
                     }
-                } else if (monthlyIncome > 70000 || savings > 300000) {
+                } else if (monthlyIncome > 70000 || savings > 50000) {
                     if (riskTolerance === "high") {
                         recommendedScheme = "elite";
                     } else {
@@ -132,7 +131,7 @@
         // js/dashboard.js
 document.getElementById('logoutBtn').addEventListener('click', function (e) {
     e.preventDefault();
-    localStorage.clear(); // Clears all login data
+    localStorage.clear(); 
     alert("Logged out successfully.");
     window.location.href = "login.html";
 });

@@ -26,7 +26,7 @@
                 <h2 id="schemeTitle">Scheme Name</h2>
                 <p id="schemeContribution">Monthly Contribution: </p>
                 <p id="schemeReturns">Expected Returns: </p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. This plan is suitable for individuals based on risk profile and long-term goals.</p>
+                <p id="schemeDescription">Scheme description goes here.</p> <!-- Added this -->
                 <a href="dashboard.html" class="back-link">← Back to Dashboard</a>
             </section>
         </div>
@@ -34,9 +34,10 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 RetireWise. All rights reserved.</p>
+            <p>&copy; 2025 RetireWise. All rights reserved.</p>
         </div>
     </footer>
+
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const scheme = urlParams.get('scheme');
@@ -44,18 +45,21 @@
         const details = {
             basic: {
                 title: "Basic Retirement Plan",
-                contribution: "$500",
-                returns: "5% annually"
+                contribution: "599",
+                returns: "5% annually",
+                description: "With your monthly contribution of ₹599 (which equals ₹7,188 annually), your retirement savings would grow steadily over time thanks to compound interest. Over a 30-year period, while you would personally contribute approximately ₹2,15,640, the power of compounding at 5% annually would potentially grow your retirement fund to around ₹5,60,669. This remarkable growth represents about ₹3,45,029 in investment returns beyond your contributions. Following the widely-accepted 4% withdrawal rule during retirement, this fund could provide you with approximately ₹22,427 annually or about ₹1,869 monthly in retirement income."
             },
             premium: {
                 title: "Premium Retirement Plan",
-                contribution: "$1000",
-                returns: "7% annually"
+                contribution: "1099",
+                returns: "7% annually",
+                description: "With your monthly contribution of ₹1,099 (which equals ₹13,188 annually), your retirement savings would grow substantially over time due to the power of compound interest at a higher rate. Over a 30-year period, while you would personally contribute approximately ₹3,95,640, the impressive compounding at 7% annually would potentially grow your retirement fund to around ₹15,00,000. This exceptional growth represents about ₹11,04,360 in investment returns beyond your contributions. Following the widely-accepted 4% withdrawal rule during retirement, this fund could provide you with approximately ₹60,000 annually or about ₹5,000 monthly in retirement income."
             },
             elite: {
                 title: "Elite Retirement Plan",
-                contribution: "$2000",
-                returns: "9% annually"
+                contribution: "2000",
+                returns: "9% annually",
+                description: "With your monthly contribution of ₹2,000 (which equals ₹24,000 annually), your retirement savings would experience remarkable growth due to the powerful combination of substantial contributions and high-yield investments. Over a 30-year period, while you would personally contribute approximately ₹720,000, the exceptional compounding at 9% annually would potentially grow your retirement fund to around ₹3,500,000. This extraordinary growth represents about ₹2,780,000 in investment returns beyond your contributions. Following the widely-accepted 4% withdrawal rule during retirement, this fund could provide you with approximately ₹140,000 annually or about ₹11,667 monthly in retirement income."
             }
         };
 
@@ -63,6 +67,7 @@
             document.getElementById("schemeTitle").textContent = details[scheme].title;
             document.getElementById("schemeContribution").textContent = `Monthly Contribution: ${details[scheme].contribution}`;
             document.getElementById("schemeReturns").textContent = `Expected Returns: ${details[scheme].returns}`;
+            document.getElementById("schemeDescription").textContent = details[scheme].description;
         } else {
             document.querySelector(".scheme-details").innerHTML = "<p>Scheme not found.</p><a href='dashboard.html'>Go Back</a>";
         }
